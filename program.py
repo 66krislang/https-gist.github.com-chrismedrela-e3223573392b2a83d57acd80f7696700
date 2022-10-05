@@ -3,30 +3,35 @@
 # W zakładce "extensions" zainstalować plugin do Pythona
 # W terminalu: pip install requests
 
-# Crash Course z Visual Studio Code:
+# Szybki kurs korzystania z Visual Studio Code
 # 1) boczny panel
 # 2) edytor kodu
 # 3) terminal
 
-# nazwa_funkcji(argument1, argument2)
-# zmienna.nazwa_metody(argument1, argument2)
+### W terminalu:
+# python program.py
+# clear
+# pip install requests
+### A cała reszta dzieje się w edytorze kodu
+
+# funkcja(argument1, argument2)
+
+# imiona = ["ala", "wojtek", "alina"]
+# print(imiona)
+# print(imiona[1])  # ==> wojtek
 
 # paczka = {
 #     'imie': 'jan',
-#     'nazwisko': 'kowalski',
+#     'nazwisko': 'kowalski'
 # }
 # print(paczka)
-# print(paczka['imie'])
-
-# lista = ["ala", "wojtek", "alina"]
-# print(lista)
-# print(lista[1])  # ==> wojtek
+# print(paczka['nazwisko'])  # ==> kowalski
 
 # osoby = [
 #     {'imie': 'jan', 'nazwisko': 'kowalski'},
-#     {'imie': 'ala', 'nazwisko': 'wisniewska'},
+#     {'imie': 'anna', 'nazwisko': 'wisniewska'}
 # ]
-
+# print(osoby)
 # print(osoby[1]['nazwisko'])  # ==> wisniewska
 
 # dane = {
@@ -35,29 +40,36 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "159/A/NBP/2022",
-#             "effectiveDate": "2022-08-18",
-#             "mid": 4.6468
+#             "no": "193/A/NBP/2022",
+#             "effectiveDate": "2022-10-05",
+#             "mid": 4.8380
 #         }
 #     ]
 # }
 
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2022-10-05/?format=json
+
+# from szuflada import wiertarka
 from requests import get
 
+print("KALKULATOR WALUT")
+
 waluta = input("Podaj walutę: ")
-waluta = waluta.upper()
-data = input("Podaj datę: ")
+
+data = input("Podaj datę (RRRR-MM-DD): ")
 
 odpowiedz = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{data}/?format=json")
 
-if odpowiedz.ok:
-    dane = odpowiedz.json()
-    kurs_waluty = dane['rates'][0]['mid']
-    print(f"1 {waluta} = {kurs_waluty} PLN w dniu {data}")
+dane = odpowiedz.json()
 
-    # http://api.nbp.pl/api/exchangerates/rates/a/usd/2022-08-18/?format=json
+kurs = dane["rates"][0]["mid"]
 
-else:
-    print("Brak danych")
+print(f"1 {waluta} = {kurs:.2f} PLN")
 
-print("Koniec")
+
+     #
+    # #
+   #   #
+  #######
+     #
+     #
