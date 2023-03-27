@@ -1,38 +1,43 @@
-# Python  https://www.python.org/downloads/
-# Visual Studio Code  https://code.visualstudio.com
-# W zakładce "extensions" zainstalować plugin do Pythona
-# W terminalu: pip install requests
+# Język programowania: Python  https://www.python.org/downloads/
+# Edytor kodu (Word dla programistów): Visual Studio Code  https://code.visualstudio.com
 
-# Szybki kurs korzystania z Visual Studio Code
-# 1) boczny panel
-# 2) edytor kodu
-# 3) terminal
+# PLN USD EUR
 
-### W terminalu:
+# Narodowy Bank Polski
+
+# 1) Wybór języka programowania
+# 2) Programowanie = kodowanie
+# 3) Testowanie = Quality Assurance (QA) = Kontrola Jakość
+
+# W terminalu:
 # python program.py
-# clear
-# pip install requests
-### A cała reszta dzieje się w edytorze kodu
+# clear / cls
 
-# funkcja(argument1, argument2)
+# instrukcja(argument)
+# zmienna = instrukcja(argument)
 
-# imiona = ["ala", "wojtek", "alina"]
-# print(imiona)
-# print(imiona[1])  # ==> wojtek
+# http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-03-27/?format=json
 
-# paczka = {
-#     'imie': 'jan',
-#     'nazwisko': 'kowalski'
-# }
-# print(paczka)
-# print(paczka['nazwisko'])  # ==> kowalski
+# A = kurs średnich
+# B = kursów zakupu i sprzedaży
 
-# osoby = [
-#     {'imie': 'jan', 'nazwisko': 'kowalski'},
-#     {'imie': 'anna', 'nazwisko': 'wisniewska'}
-# ]
-# print(osoby)
-# print(osoby[1]['nazwisko'])  # ==> wisniewska
+# 1. pójść do Castoramy po skrzynkę z narzędziami (z wiertarką)
+# 2. wyjąć wiertarkę ze skrzynki na biurko
+# 3. użyć wiertarkę
+
+# from skrzynka import wiertarka
+from requests import get
+
+print("KALKULATOR WALUT")
+
+waluta = input("Podaj walutę: ")
+
+dzien = input("Podaj dzień (RRRR-MM-DD): ")
+
+strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{dzien}/?format=json")
+
+dane = strona.json()
 
 # dane = {
 #     "table": "A",
@@ -40,36 +45,51 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "193/A/NBP/2022",
-#             "effectiveDate": "2022-10-05",
-#             "mid": 4.8380
+#             "no": "060/A/NBP/2023",
+#             "effectiveDate": "2023-03-27",
+#             "mid": 4.3518
 #         }
 #     ]
 # }
 
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2022-10-05/?format=json
-
-# from szuflada import wiertarka
-from requests import get
-
-print("KALKULATOR WALUT")
-
-waluta = input("Podaj walutę: ")
-
-data = input("Podaj datę (RRRR-MM-DD): ")
-
-odpowiedz = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{data}/?format=json")
-
-dane = odpowiedz.json()
-
 kurs = dane["rates"][0]["mid"]
 
-print(f"1 {waluta} = {kurs:.2f} PLN")
+print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 
+# kwadratowa = ["jan", "alicja", "wojtek"]  # Excel z jedną kolumną (A)
+# print(kwadratowa)
+# print(kwadratowa[0])
 
-     #
-    # #
-   #   #
-  #######
-     #
-     #
+# wasata = {  # Excel z dwoma kolumnami (A, B)
+#     "imie": "jan",
+#     "nazwisko": "kowalski",
+# }
+# print(wasata)
+# print(wasata["nazwisko"])
+
+# osoby = [
+#     {
+#         "imie": "jan",
+#         "nazwisko": "kowalski",
+#     },
+#     {
+#         "imie": "alicja",
+#         "nazwisko": "wisniewska",
+#     }
+# ]
+# print(osoby)
+# print(osoby[1]["nazwisko"])   # => wisniewska
+
+# dane = {
+#     "table": "A",
+#     "currency": "dolar amerykański",
+#     "code": "USD",
+#     "rates": [
+#         {
+#             "no": "060/A/NBP/2023",
+#             "effectiveDate": "2023-03-27",
+#             "mid": 4.3518
+#         }
+#     ]
+# }
+# print(dane["rates"][0]["mid"])  # => 4.3518
