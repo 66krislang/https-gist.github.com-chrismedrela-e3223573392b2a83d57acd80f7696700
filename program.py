@@ -1,32 +1,40 @@
 # Język programowania: Python  https://www.python.org/downloads/
 # Edytor kodu (Word dla programistów): Visual Studio Code  https://code.visualstudio.com
 
-# PLN USD EUR
+# Zeznanie roczne PIT
 
-# Narodowy Bank Polski
+# PLN, EUR, USD
+# USD -> PLN
+# EUR -> PLN
 
-# 1) Wybór języka programowania
-# 2) Programowanie = kodowanie
-# 3) Testowanie = Quality Assurance (QA) = Kontrola Jakość
+# NASZ_PROGRAM  -> NBP:  Hej, jaki był kurs USD w dniu 2023-04-09?
+# NBP -> NASZ_PROGRRAM: Tutaj był kurs ...
+
+# 1) wybór języka programowania
+# 2) kodowanie = programowanie
+# 3) testowanie = QA (Quality Assurance) = kontrola jakości
+
+# plik.py
+
+# Język programowania
+# 1. łatwy = prosty
+# 2. łatwe znalezienie pracę (popularny, dużo ofert pracy, nie może być zbyt konkurencyjny)
+
+# Trudne: C, C++, assembler
+# Średnio-trudne: Java, C#
+# Proste: Python, Javascript, Ruby, VBA
 
 # W terminalu:
 # python program.py
-# clear / cls
+# clear
+# pip install requests
 
-# instrukcja(argument)
-# zmienna = instrukcja(argument)
-
-# http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-03-27/?format=json
-
-# A = kurs średnich
-# B = kursów zakupu i sprzedaży
-
-# 1. pójść do Castoramy po skrzynkę z narzędziami (z wiertarką)
-# 2. wyjąć wiertarkę ze skrzynki na biurko
-# 3. użyć wiertarkę
+# 1. Wziąć z Castoramy skrzynkę z narzędziami: pip install requests
+# 2. Wyjąć wiertarkę ze skrzynki i położyć biurku
+# 3. Użyć wiertarki
 
 # from skrzynka import wiertarka
+
 from requests import get
 
 print("KALKULATOR WALUT")
@@ -39,46 +47,17 @@ strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{dzien}/?for
 
 dane = strona.json()
 
-# dane = {
-#     "table": "A",
-#     "currency": "dolar amerykański",
-#     "code": "USD",
-#     "rates": [
-#         {
-#             "no": "060/A/NBP/2023",
-#             "effectiveDate": "2023-03-27",
-#             "mid": 4.3518
-#         }
-#     ]
-# }
-
 kurs = dane["rates"][0]["mid"]
 
 print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 
-# kwadratowa = ["jan", "alicja", "wojtek"]  # Excel z jedną kolumną (A)
-# print(kwadratowa)
-# print(kwadratowa[0])
+# flask Django
 
-# wasata = {  # Excel z dwoma kolumnami (A, B)
-#     "imie": "jan",
-#     "nazwisko": "kowalski",
-# }
-# print(wasata)
-# print(wasata["nazwisko"])
+# http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/{date}/
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-04-12/?format=json
 
-# osoby = [
-#     {
-#         "imie": "jan",
-#         "nazwisko": "kowalski",
-#     },
-#     {
-#         "imie": "alicja",
-#         "nazwisko": "wisniewska",
-#     }
-# ]
-# print(osoby)
-# print(osoby[1]["nazwisko"])   # => wisniewska
+# A = kursów srednich
+# B = kursó∑ zakupu i sprzedaży
 
 # dane = {
 #     "table": "A",
@@ -86,10 +65,9 @@ print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "060/A/NBP/2023",
-#             "effectiveDate": "2023-03-27",
-#             "mid": 4.3518
+#             "no": "071/A/NBP/2023",
+#             "effectiveDate": "2023-04-12",
+#             "mid": 4.2713
 #         }
 #     ]
 # }
-# print(dane["rates"][0]["mid"])  # => 4.3518
