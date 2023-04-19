@@ -1,37 +1,27 @@
-# Język programowania: Python  https://www.python.org/downloads/
+# Język programowania Python: https://www.python.org/downloads/
 # Edytor kodu (Word dla programistów): Visual Studio Code  https://code.visualstudio.com
 
-# Zeznanie roczne PIT
+# dochód = przychód - koszty
 
-# PLN, EUR, USD
+# PLN USD EUR
+
 # USD -> PLN
 # EUR -> PLN
 
-# NASZ_PROGRAM  -> NBP:  Hej, jaki był kurs USD w dniu 2023-04-09?
-# NBP -> NASZ_PROGRRAM: Tutaj był kurs ...
-
-# 1) wybór języka programowania
-# 2) kodowanie = programowanie
-# 3) testowanie = QA (Quality Assurance) = kontrola jakości
-
-# plik.py
-
-# Język programowania
-# 1. łatwy = prosty
-# 2. łatwe znalezienie pracę (popularny, dużo ofert pracy, nie może być zbyt konkurencyjny)
-
-# Trudne: C, C++, assembler
-# Średnio-trudne: Java, C#
-# Proste: Python, Javascript, Ruby, VBA
+# Narodowy Bank Polski
 
 # W terminalu:
 # python program.py
 # clear
 # pip install requests
 
-# 1. Wziąć z Castoramy skrzynkę z narzędziami: pip install requests
-# 2. Wyjąć wiertarkę ze skrzynki i położyć biurku
-# 3. Użyć wiertarki
+# 1) wybiera język programowania
+# 2) kodowanie = programowanie
+# 3) testowanie = QA (Quality Assurance) = kontrola jakości
+
+# 1. idziemy do Castoramy po skrzynkę z narzędziami
+# 2. wyciągamy ze skrzynki wiertarkę i kładziemy na biurku
+# 3. używamy wiertarki
 
 # from skrzynka import wiertarka
 
@@ -51,13 +41,11 @@ kurs = dane["rates"][0]["mid"]
 
 print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 
-# flask Django
-
 # http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-04-12/?format=json
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-04-19/?format=json
 
-# A = kursów srednich
-# B = kursó∑ zakupu i sprzedaży
+# A = kursów średnich
+# B = kursów sprzedaży i kupna
 
 # dane = {
 #     "table": "A",
@@ -65,9 +53,9 @@ print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "071/A/NBP/2023",
-#             "effectiveDate": "2023-04-12",
-#             "mid": 4.2713
+#             "no": "076/A/NBP/2023",
+#             "effectiveDate": "2023-04-19",
+#             "mid": 4.2244
 #         }
 #     ]
 # }
