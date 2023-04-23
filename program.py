@@ -60,3 +60,4 @@ print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 #     ]
 # }
 
+# asdf
