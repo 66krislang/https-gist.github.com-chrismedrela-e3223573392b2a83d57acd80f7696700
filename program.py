@@ -1,29 +1,27 @@
-# Język programowania Python: https://www.python.org/downloads/
-# Edytor kodu (Word dla programistów): Visual Studio Code  https://code.visualstudio.com
+# Język programowania:  Python https://www.python.org/downloads/
+# Edytor kodu (Word dla programistów):  Visual Studio Code https://code.visualstudio.com
 
-# dochód = przychód - koszty
+# PLN EUR USD
 
-# PLN USD EUR
-
-# USD -> PLN
 # EUR -> PLN
-
-# Narodowy Bank Polski
+# USD -> PLN
 
 # W terminalu:
 # python program.py
-# clear
+# clear / cls
 # pip install requests
 
-# 1) wybiera język programowania
-# 2) kodowanie = programowanie
+# 1) wybór języka programowania
+# 2) programowanie = kodowanie
 # 3) testowanie = QA (Quality Assurance) = kontrola jakości
 
-# 1. idziemy do Castoramy po skrzynkę z narzędziami
-# 2. wyciągamy ze skrzynki wiertarkę i kładziemy na biurku
-# 3. używamy wiertarki
+# 1. pójść do Castoramy po skrzynkę z narzędziami (wiertarką)
+# 2. wyciągnąć wiertarkę ze skrzynki i położyć na biurku
+# 3. użyć wiertarki
 
 # from skrzynka import wiertarka
+
+
 
 from requests import get
 
@@ -37,15 +35,18 @@ strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{dzien}/?for
 
 dane = strona.json()
 
-kurs = dane["rates"][0]["mid"]
+kurs = dane['rates'][0]['mid']
 
 print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 
-# http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-04-19/?format=json
 
-# A = kursów średnich
-# B = kursów sprzedaży i kupna
+
+
+# http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-04-26/?format=json
+
+# A = kursy średnich
+# B = kursy zakupu i sprzedaży
 
 # dane = {
 #     "table": "A",
@@ -53,9 +54,11 @@ print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "076/A/NBP/2023",
-#             "effectiveDate": "2023-04-19",
-#             "mid": 4.2244
+#             "no": "081/A/NBP/2023",
+#             "effectiveDate": "2023-04-26",
+#             "mid": 4.1557
 #         }
 #     ]
 # }
+
+# Plugin GPT: Genie  https://github.com/ai-genie/chatgpt-vscode
