@@ -1,25 +1,48 @@
-# Język programowania:  Python https://www.python.org/downloads/
-# Edytor kodu (Word dla programistów):  Visual Studio Code https://code.visualstudio.com
-
-# PLN EUR USD
+# Zeznanie roczne PIT:
+# przychody, koszty, PLN
 
 # EUR -> PLN
 # USD -> PLN
+# PLN
+
+# 1. wybór języka programowania
+# 2. kodowanie = programowanie
+# 3. testowanie = QA (Quality Assurance) = kontrola jakości
+
+# Język programowania: Python  https://www.python.org/downloads/
+# Edytora kodu (Word dla programistów): Visual Studio Code   https://code.visualstudio.com
 
 # W terminalu:
 # python program.py
 # clear / cls
 # pip install requests
 
-# 1) wybór języka programowania
-# 2) programowanie = kodowanie
-# 3) testowanie = QA (Quality Assurance) = kontrola jakości
+# plik.py
 
-# 1. pójść do Castoramy po skrzynkę z narzędziami (wiertarką)
-# 2. wyciągnąć wiertarkę ze skrzynki i położyć na biurku
-# 3. użyć wiertarki
+# http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-08/?format=json
 
-# from skrzynka import wiertarka
+# A = kursów średnich
+# B = kursów sprzedaży i zakupu
+
+# dane = {
+#     "table": "A",
+#     "currency": "dolar amerykański",
+#     "code": "USD",
+#     "rates": [
+#         {
+#             "no": "087/A/NBP/2023",
+#             "effectiveDate": "2023-05-08",
+#             "mid": 4.1384
+#         }
+#     ]
+# }
+
+# 1. Przynieść skrzynkę z narzędziami do domu
+# 2. Wyciągnąć wiertarkę ze skrzynki i położyć na stole
+# 3. Użyc wiertarki
+
+
 
 
 
@@ -35,30 +58,6 @@ strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{dzien}/?for
 
 dane = strona.json()
 
-kurs = dane['rates'][0]['mid']
+kurs = dane["rates"][0]["mid"]
 
 print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
-
-
-
-
-# http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-04-26/?format=json
-
-# A = kursy średnich
-# B = kursy zakupu i sprzedaży
-
-# dane = {
-#     "table": "A",
-#     "currency": "dolar amerykański",
-#     "code": "USD",
-#     "rates": [
-#         {
-#             "no": "081/A/NBP/2023",
-#             "effectiveDate": "2023-04-26",
-#             "mid": 4.1557
-#         }
-#     ]
-# }
-
-# Plugin GPT: Genie  https://github.com/ai-genie/chatgpt-vscode
