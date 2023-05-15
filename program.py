@@ -1,29 +1,28 @@
-# Zeznanie roczne PIT:
-# przychody, koszty, PLN
-
-# EUR -> PLN
-# USD -> PLN
 # PLN
+# USD -> PLN  #
+# EUR -> PLN  #
 
-# 1. wybór języka programowania
-# 2. kodowanie = programowanie
-# 3. testowanie = QA (Quality Assurance) = kontrola jakości
+# 1. Wybór język programowania
+# 2. Kodowanie = programowanie
+# 3. Testowanie = QA (Quality Assurance) = kontrola jakość
 
-# Język programowania: Python  https://www.python.org/downloads/
-# Edytora kodu (Word dla programistów): Visual Studio Code   https://code.visualstudio.com
+# Język programowania:  https://www.python.org/downloads/
+# Edytor kodu (Word dla programistów):  Visual Studio Code  https://code.visualstudio.com
 
 # W terminalu:
 # python program.py
 # clear / cls
 # pip install requests
 
-# plik.py
-
 # http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-08/?format=json
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-15/?format=json
 
-# A = kursów średnich
-# B = kursów sprzedaży i zakupu
+# A = kursy średnie
+# B = kursy zakupu/sprzedaży
+
+# 1. wziąć z Castoramy skrzynkę z narzędziami (m.in. z wiertarką)
+# 2. wyciągnąć wiertarkę ze skrzynki i położyć na biurku
+# 3. użyć wiertarki
 
 # dane = {
 #     "table": "A",
@@ -31,22 +30,17 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "087/A/NBP/2023",
-#             "effectiveDate": "2023-05-08",
-#             "mid": 4.1384
+#             "no": "092/A/NBP/2023",
+#             "effectiveDate": "2023-05-15",
+#             "mid": 4.1490
 #         }
 #     ]
 # }
 
-# 1. Przynieść skrzynkę z narzędziami do domu
-# 2. Wyciągnąć wiertarkę ze skrzynki i położyć na stole
-# 3. Użyc wiertarki
-
-
-
 
 
 from requests import get
+
 
 print("KALKULATOR WALUT")
 
