@@ -1,26 +1,29 @@
+# Język programowania (Python):  https://www.python.org/downloads/
+# Edytor kodu (Word dla programistów) - Visual Studio Code  https://code.visualstudio.com
+
+# zeznanie podatkowe
 # PLN
-# EUR -> PLN
 # USD -> PLN
+# EUR -> PLN
 
-# 1. wybór języka programowania
-# 2. kodowanie = programowanie
-# 3. testowanie = QA (Quality Assurance) = kontrola jakości
-
-# Język programownia (Python):  https://www.python.org/downloads/
-# Edytor kodu (Word dla programistów): Visual Studio Code  https://code.visualstudio.com
+# 1) wybór język programowania
+# 2) programowanie = kodowanie
+# 3) QA (Quality Assurance) = testowanie = kontrola jakości
 
 # W terminalu:
 # python program.py
-# clear / cls
+# clear / cls
 # pip install requests
 
 # http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-22/?format=json
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-29/?format=json
 
+# A = kursów średnich
+# B = kursów zakupu / sprzedaży
 
-# 1. idziemy do Castoramy po skrzynkę z narzędziami, m.in. z wiertarką: pip install requests (w terminalu!)
-# 2. wyciągamy ze skrzynki wiertarkę i kładziemy na stole
-# 3. używamy wiertarki
+# 1. wziąć z Castoramy do domu skrzynkę z narzędziami (wiertarką)
+# 2. ze skrzynki wyciągnąć wiertarkę i położyć na biurku
+# 3. użyć wiertarki
 
 # dane = {
 #     "table": "A",
@@ -28,14 +31,12 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "097/A/NBP/2023",
-#             "effectiveDate": "2023-05-22",
-#             "mid": 4.1881
+#             "no": "102/A/NBP/2023",
+#             "effectiveDate": "2023-05-29",
+#             "mid": 4.2234
 #         }
 #     ]
 # }
-
-
 
 
 
@@ -55,4 +56,3 @@ dane = strona.json()
 kurs = dane["rates"][0]["mid"]
 
 print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
-
