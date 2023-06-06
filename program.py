@@ -1,29 +1,17 @@
-# Język programowania (Python):  https://www.python.org/downloads/
-# Edytor kodu (Word dla programistów) - Visual Studio Code  https://code.visualstudio.com
-
-# zeznanie podatkowe
 # PLN
 # USD -> PLN
-# EUR -> PLN
 
-# 1) wybór język programowania
-# 2) programowanie = kodowanie
-# 3) QA (Quality Assurance) = testowanie = kontrola jakości
+# 1) wybrać język programowania
+# 2) kodowania = programowania
+# 3) testowanie = QA (Quality Assurance) = kontrola jakości
+
+# Język programowania:  https://www.python.org/downloads/
+# Edytor kodu (Word dla programistów):  Visual Studio Code   https://code.visualstudio.com
 
 # W terminalu:
 # python program.py
-# clear / cls
+# clear / cls
 # pip install requests
-
-# http://api.nbp.pl/api/exchangerates/rates/{table}/code}/{date}/
-# http://api.nbp.pl/api/exchangerates/rates/a/usd/2023-05-29/?format=json
-
-# A = kursów średnich
-# B = kursów zakupu / sprzedaży
-
-# 1. wziąć z Castoramy do domu skrzynkę z narzędziami (wiertarką)
-# 2. ze skrzynki wyciągnąć wiertarkę i położyć na biurku
-# 3. użyć wiertarki
 
 # dane = {
 #     "table": "A",
@@ -31,13 +19,22 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "102/A/NBP/2023",
-#             "effectiveDate": "2023-05-29",
-#             "mid": 4.2234
+#             "no": "108/A/NBP/2023",
+#             "effectiveDate": "2023-06-06",
+#             "mid": 4.1964
 #         }
 #     ]
 # }
 
+# http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/
+# http://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json
+
+# A = kurs średnich
+# B = kurs sprzedaży/zakupu
+
+# 1. pójść do Castoramy po skrzynkę z narzędziami (z wiertarką) i przynieść ją do domu: w terminalu: pip install requests
+# 2. ze skrzynki wyciągnąć wiertarkę i położyć na stole
+# 3. użyj wiertarki
 
 
 
@@ -47,12 +44,10 @@ print("KALKULATOR WALUT")
 
 waluta = input("Podaj walutę: ")
 
-dzien = input("Podaj dzień (RRRR-MM-DD): ")
-
-strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{dzien}/?format=json")
+strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/today/?format=json")
 
 dane = strona.json()
 
 kurs = dane["rates"][0]["mid"]
 
-print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
+print(f"1 {waluta} = {kurs} PLN")
