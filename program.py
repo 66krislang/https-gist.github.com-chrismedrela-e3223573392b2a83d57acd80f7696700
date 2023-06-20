@@ -1,37 +1,37 @@
 # PLN
 # USD -> PLN
+# EUR -> PLN
 
-# 1) wybór języka programowania
-# 2) kodowanie = programowanie
+# 1) wybór język programowania
+# 2) programowanie = kodowanie
 # 3) testowanie = QA (Quality Assurance) = kontrola jakości
 
 # W terminalu:
 # python program.py
 # clear / cls
-# pip install requests
 
 # http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/
 # http://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json
 
-# A = kurs śrendich
-# B = kurs zakupu i sprzedaży
+# A = kursów średnich
+# B = kursów zakupu i sprzedaży
 
-# 1. Wziąć skrzynkę z narzędziami (z wiertarką) z castoramy i przynieść do domu
-# 2. Wyciągnąć ze skrzynki wiertarkę i położyć na biurku
+# 1. Przynieść z castoramy skrzynkę z narzędziami (z wiertarką) do domu: pip install requests
+# 2. Wyciągnąć wiertarkę ze skrzynki i położyć na biurku
 # 3. Użyć wiertarki
 
-dane = {
-    "table": "A",
-    "currency": "dolar amerykański",
-    "code": "USD",
-    "rates": [
-        {
-            "no": "113/A/NBP/2023",
-            "effectiveDate": "2023-06-14",
-            "mid": 4.1393
-        }
-    ]
-}
+# dane = {
+#     "table": "A",
+#     "currency": "dolar amerykański",
+#     "code": "USD",
+#     "rates": [
+#         {
+#             "no": "117/A/NBP/2023",
+#             "effectiveDate": "2023-06-20",
+#             "mid": 4.0580
+#         }
+#     ]
+# }
 
 
 
@@ -41,12 +41,10 @@ print("KALKULATOR WALUT")
 
 waluta = input("Podaj walutę: ")
 
-dzien = input("Podaj dzień (RRRR-MM-DD): ")
-
-strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/{dzien}/?format=json")
+strona = get(f"http://api.nbp.pl/api/exchangerates/rates/a/{waluta}/today/?format=json")
 
 dane = strona.json()
 
 kurs = dane["rates"][0]["mid"]
 
-print(f"1 {waluta} = {kurs} PLN w dniu {dzien}")
+print(f"1 {waluta} = {kurs} PLN")
