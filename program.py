@@ -1,27 +1,31 @@
-# PIT (roczny)
-#
 # PLN
-# EUR -> PLN
 # USD -> PLN
+# EUR -> PLN
+
+# Skąd weźmiemy kursy => NBP
 
 # 1) wybór języka programowania
-# 2) programujemy = kodujemy
-# 3) testowanie = QA (Quality Assurance) = kontrola jakość
+# 2) programowanie = kodowanie
+# 3) testowanie = Quality Assurance (QA) = kontrola jakości
 
-# W terminalu (= kuchnii):
-# python program.py
-# clear
-# pip install requests
+# Visual Studio Code
+
+# po lewej = przepis kulinarny (kartka)
+# po prawej = kuchnia z robotem kuchennym
+
+# W terminalu (po prawej):
+# uruchamiamy robota: python program.py
+# posprzątać kuchnię: clear
 
 # http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/
 # http://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json
 
-# A = kurs średni
-# B = kurs sprzedaży i kupna
+# A = kursy średnie
+# B = kursy zakupu i sprzedaży
 
-# 1. przynieść skrzynkę z narzędziami (z wiertarką) z castoramy
-# 2. ze skrzynki wyciągamy wiertarkę na stół
-# 3. używamy wiertarki
+# 1. pójść do castoramy po skrzynkę z narzędziami (z wiertarką): pip install requests
+# 2. wyciągnąć wiertarkę ze skrzynki i położyć na biurku
+# 3. użyć wiertarki
 
 # dane = {
 #     "table": "A",
@@ -29,13 +33,12 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "133/A/NBP/2023",
-#             "effectiveDate": "2023-07-12",
-#             "mid" :4.0347
+#             "no": "138/A/NBP/2023",
+#             "effectiveDate": "2023-07-19",
+#             "mid": 3.9612
 #         }
 #     ]
 # }
-
 
 
 
