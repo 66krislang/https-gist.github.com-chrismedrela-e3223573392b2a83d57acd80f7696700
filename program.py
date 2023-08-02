@@ -3,22 +3,28 @@
 # PLN
 # USD -> PLN
 
-# 1) wybór język programowania
-# 2) programowanie = kodowanie
-# 3) kontrola jakości = QA (Quality Assurance) = testowanie
+# 1) wybór języka programowania
+# 2) kodowanie = programowanie
+# 3) testowanie = QA (Quality Assurance) = kontrola jakości
 
-# Po prawej stronie - w terminalu (kuchnii + robot):
-# python program.py # uruchomienie programu = wypieczenia ciasta
-# clear  # wyczyszczenie kuchni
+# Lewa = program = przepis kulinarny
+
+# Prawa = terminal = robot w kuchnii
+
+# W terminalu:
+# python program.py  # wypiecz ciastko
+# clear  # posprzątaj kuchnię
+
+# Mario Bros = platformówka
 
 # http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/
 # http://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json
 
-# A = kursów średnich
-# B = kursów zakupu i sprzedaży
+# A = kursy średnich
+# B = kursów sprzedaży i zakupu
 
-# 1. pójść do castoramy po skrzynkę z narzędziami z wiertarką
-# 2. wyciągamy ze skrzynki wiertarkę i kładziemy na biurku
+# 1. idziemy do Castoramy po skrzynkę z narzędziami (z wiertarką) i przynosimy skrzynkę do domu: pip install requests
+# 2. wyciągamy wiertarkę ze skrzynki i kładziemy na biurku: from skrzynka import wiertarka
 # 3. używamy wiertarki
 
 # dane = {
@@ -27,13 +33,16 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "143/A/NBP/2023",
-#             "effectiveDate": "2023-07-26",
-#             "mid": 3.9949
+#             "no": "148/A/NBP/2023",
+#             "effectiveDate": "2023-08-02",
+#             "mid": 4.0497
 #         }
 #     ]
 # }
 
+# Edytor kodu:
+# Visual Studio Code
+# PyCharm
 
 
 
