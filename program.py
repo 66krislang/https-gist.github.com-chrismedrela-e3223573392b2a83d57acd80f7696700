@@ -1,33 +1,30 @@
-# PIT zeznanie roczne
+# PIT roczny
 
-# 1000 PLN
-# 1000 USD => PLN
+# PLN
+# USD => PLN
 
-# 1) wybór języka programowania => Python
-# 2) kodowanie = programowanie
+# 1) wybór język programowania: łatwy i popularny
+# 2) programowanie = kodowanie
 # 3) testowanie = QA (Quality Assurance) = kontrola jakości
 
-# Lewa strona = program = kartka papieru z przepisem kulinarnym
-# Prawa strona = terminal = kuchnia z robotem kuchennym i ciastkami
+# Po lewej = program = przepis kulinarny
+
+# Po prawej = terminal = kuchnia z robotem kuchennym
 
 # W terminalu:
-# python program.py  # włączenie robota kuchennego
-# clear  # wyczyść kuchnię
-# pip install requests  # pójdź do Castoramy po wiertarkę
-
-# Mario Bros / platformówka
+# python program.py  # uruchomienie programu = naciśnięcie play na robocie kuchennym
+# clear   # wyczyszczenie terminala = posprzątanie kuchnii
+# pip install requests  # instalacja biblioteki = pójście do castoramy
 
 # http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/
 # http://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json
 
 # A = kursy średnie
-# B = kursów zakupu i sprzedaży
+# B = kursy zakupu i sprzedaży
 
-# 1. pójść do Castoramy po skrzynkę z narzędziami z wiertarką
-# 2. wyciągnąć wiertarkę ze skrzynki i położyć ją na stole
-# 3. używamy wiertarki
-
-# from skrzynka import wiertarka
+# 1. Idziemy do Castoramy po skrzynkę z narzędziami z wiertarką i przynosimy do domu.
+# 2. Wyciągamy ze skrzynki wiertarkę i kładziemy na biurku
+# 3. Używamy wiertarki.
 
 # dane = {
 #     "table": "A",
@@ -35,9 +32,9 @@
 #     "code": "USD",
 #     "rates": [
 #         {
-#             "no": "156/A/NBP/2023",
-#             "effectiveDate": "2023-08-14",
-#             "mid": 4.0525
+#             "no": "160/A/NBP/2023",
+#             "effectiveDate": "2023-08-21",
+#             "mid": 4.1124
 #         }
 #     ]
 # }
